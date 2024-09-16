@@ -26,7 +26,7 @@
             </script>
             <li>Variables</li>
             <script>/*reservamos memoria para un dato y utilizamos
-                    su referencia como parametro*/
+                su referencia como parametro*/
                 let variable = "mensaje en una variable"
                 alert(variable);
             </script>
@@ -48,17 +48,29 @@
 
             /*Puedo crear expresiones mezclando tipos de datos*/
             let texto = "el valor de la varaible es:"
-                //texto sera una string
-                alert(texto+ "\n" + numero1); //he meclado un texto con un caracter de escape y un numero
-                //java script realiza las conversiones necesarias, siendo el final un tipo string
-            </script>
-          <li id="PalabrasReservadas"></li>
-          <script>
+            //texto sera una string
+            alert(texto + "\n" + numero1); //he meclado un texto con un caracter de escape y un numero
+            //java script realiza las conversiones necesarias, siendo el final un tipo string
+        </script>
+        <li id="PalabrasReservadas"></li>
+        <script>
             /*  Hay palabras que no se pueden utilizar al ser reservadas por el sistemas.
                 Indico donde puedes encontrar, por ejemplo un listado de palabras
                 reservadas */
-          </script>
-        
+            let url = "https://www.todojs.com/palabras-reservadas-js";
+            //url de una ruta en una variable de texto
+
+            //construye el texto a mostrar en html
+
+            let urlTexto = "Link a palabras reservadas a Javascript"
+            urlTexto = "<a href=" + url + ">" + urlTexto + "<a/>";
+            document.getElementById("PalabrasReservadas").innerHTML = urlTexto;
+        </script>
+        <li>Si se produce un error en ejecucion deja de ejecutar</li>
+        <script>
+            let var = 32;
+            alert("no funko");
+        </script>
     </ul>
 </body>
 
