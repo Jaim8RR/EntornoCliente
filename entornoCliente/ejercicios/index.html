@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo</title>
+
+</head>
+<p id="resultado">El resultado va aqui</p>
+
+<body>
+    <script src="app.js"></script>
+    <script>
+        let texto1 = "hola"
+        let texto2 = "mundo"
+        let n1 = 12
+        let n2 = 3
+        window.alert(texto1 + texto2);
+        window.alert(n1 + n2);
+        texto1 = 21
+        alert(++texto1+"deberia ser 22")
+        //window.alert("hola mundo");
+        //document.write("Hola patata")
+
+        /*
+            document.getElementById("resultado").innerHTML = "la cadena de texto a cambiado"
+            console.log("patata");
+            console.error("fallo de la pagina")
+            console.warn("fecha no valida")
+            */
+        let a = 2;
+        let b = 3;
+        let resultado;
+        let texto;
+        resultado = a + b;
+        texto = "la suma de a y b es: ";
+        document.write(texto, resultado);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones de salida</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Introduccion a javascript</h1>
+    <h2 style="text-align: center; font-style: italic;">Instrucciones de salida</h2>
+
+    <p id="Parrafo" style="color: red;">Este parrafo sera modificado dinamicamente</p>
+    <script>
+        window.alert("Hola mundo.")
+        //window es el objeto this en este contexto
+        alert("Hola mundo. Pero en corto")
+        /*Podemos escribir texto directamente en la interpretacion del codigo html en la pagina WEB*/
+        document.write //javascript ignora espacios y tabulaciones asi que lo que hay abajo es como si 
+        //estuviero junto
+        ("Puedo incluir un parrafo en la interpretacion html")
+        //al insertar texto de codigo html hay que tener en cuenta que no se puede tener unas 
+        //comillas dobles dentro de otras habra que poner '' o viceversa
+        document.write('<h2 style="text-align: center; color: blue;">Puedo instertar codigo html directamtne</h2>')
+        //asi cogemos algo por id.
+        document.getElementById("Parrafo").innerHTML = "Este parrafo a sido modificado en tiempo de ejecucion"
+    </script>
+    
+</body>
+
+
+</html>
