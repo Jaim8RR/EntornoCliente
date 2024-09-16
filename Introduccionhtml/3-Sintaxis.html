@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integracion en HTML</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="titulo" style="text-align: center; color: bisque;">Introduccion a javascript</h1>
+    <h2 id="subtitulo" style="text-align: center; font-style: italic;">Sintaxis breve</h2>
+    <ul class="listado">
+        <li>valores</li>
+        <ul>
+            <li>Literales</li>
+            <script>//pasamos directamente el valor sin reserva de memoria
+                alert("mensaje emergente sin variable")
+                alert(3, 24)
+            </script>
+            <li>Variables</li>
+            <script>/*reservamos memoria para un dato y utilizamos
+                    su referencia como parametro*/
+                let variable = "mensaje en una variable"
+                alert(variable);
+            </script>
+        </ul>
+        <li>Operadores</li>
+        <script>
+            //podemos usar operadores para pasar como parametro
+            alert(35 + 25)//mostrara 60
+            //o utilizar operadores para inicializar variables
+            let numero = 34 + 12;
+            alert(numero); //mostrara 46  
+        </script>
+        <li>Expresiones</li>
+        <script>
+            /* Creo dos variables numericas y realizo la operacion 
+            de resta oara crear una expresion numerica */
+            let numero1 = 12, numero2 = 8;
+            alert(numero1 - numero2); //indicara 4
+
+            /*Puedo crear expresiones mezclando tipos de datos*/
+            let texto = "el valor de la varaible es:"
+                //texto sera una string
+                alert(texto+ "\n" + numero1); //he meclado un texto con un caracter de escape y un numero
+                //java script realiza las conversiones necesarias, siendo el final un tipo string
+            </script>
+          <li id="PalabrasReservadas"></li>
+          <script>
+            /*  Hay palabras que no se pueden utilizar al ser reservadas por el sistemas.
+                Indico donde puedes encontrar, por ejemplo un listado de palabras
+                reservadas */
+          </script>
+        
+    </ul>
+</body>
+
+</html>

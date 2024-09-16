@@ -1,0 +1,1 @@
+console.log("ejecuto desde otro archivo")
