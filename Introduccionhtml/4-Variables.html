@@ -16,6 +16,10 @@
             color: cadetblue;
 
         }
+        li{
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
     </style>
 </head>
 <body>
@@ -25,8 +29,49 @@
 <p>Temas a tener en cuenta al crear variables</p>
 <li>Identificadores unicos.</li>
 <li>Recomendable utilizar Identificadores descriptivos</li>
-
+<li>Empiezan por letra, $, _  y siguen con letra, numero, $, o _</li>
+<li>Pueden contener cadenas (" " o ' ') o numeros</li>
+<li><span style="font-weight: bold;">No se pueden utilizar palabras reservadas</span></li>
 
     </ul>
+    <script>
+        /* Declarcion de variables es recomendable hacerlo al principio del script
+        No estas obligado a declarar el tipo de variable, pero asi es mas facil de leer */
+        //Declaracion de variables
+        let variable;
+
+        //Mostrar el valor de una variable
+        alert(variable);
+
+        //Asignar un valor a una variable
+        variable = "Hola mundo";
+
+        //Mostrar el valor de una variable
+        alert(variable);
+        alert(variable.length); //mostrara la longitud de la cadena
+        //podemos trabajar con null
+        nombre = null; //null es un objeto en javascript
+        alert(nombre); //mostrara null
+        //alert(nombre.length); //mostrara un error
+
+        //podemos declarar varias variables a la vez
+        let numero1 = 12 ,numero2 = 8, texto;
+        let texto2 = "mondongo";
+
+        //mostramos el contenido de las variables con una concatenacion
+        texto = "El valor de la variable numero1 es: " + numero1; //creo una concatenacion de texto con un numero
+        texto = texto + "\nEl valor de la variable numero2 es: " + numero2; //añado un salto de linea y el valor de la segunda variable
+        alert(texto);
+        /*podemos jugar con el valor de las variables y el tipo
+        inicialmente la variable texto es un string, vamos a cambiarla a un numero*/
+        texto = numero1 + numero2; //texto ahora es un numero
+        alert(texto); //mostrara 20
+
+        //podemos hacer combinaciones los diferentes tipos de variables
+        texto = "El valor de la suma de " + numero1 + " y " + numero2 + " es: ";
+        texto = texto +(numero1 + numero2); //añado el resultado de la suma
+        alert(texto); //mostrara "El valor de la suma de 12 y 8 es: 128"
+
+    </script>
 </body>
 </html>
