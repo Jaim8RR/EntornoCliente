@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Aritmeticos</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .titulo{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2.titulo{
+            color: cadetblue;
+
+        }
+        li{
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Operadores Aritmeticos</h2>
+    <p style="font-style: italic; margin-left: 3em;">
+        Los operadores aritmeticos serán<br>
+        suma (+), resta (-), multiplicacion (*), division (/), modulo (%)
+    </p>
+
+    <p id="resultado" style="text-align: center; color: blueviolet;"></p>
+    <script>
+        //declaracion de variables
+        let numero1 = 5, numero2 = 2, resultado;
+
+        //realizamos las operaciones aritmeticas
+        resultado = "El valor de numero1 es: " + numero1 + "<br>"
+                    + "El valor de numero2 es: " + numero2 + "<br>"
+                    + "<br>"
+                    + numero1 + " + " + numero2 + " = " + (numero1 + numero2) + "<br>"
+                    + numero1 + " - " + numero2 + " = " + (numero1 - numero2) + "<br>"
+                    + numero1 + " * " + numero2 + " = " + (numero1 * numero2) + "<br>"
+                    + numero1 + " / " + numero2 + " = " + (numero1 / numero2) + "<br>"
+                    + numero1 + " % " + numero2 + " = " + (numero1 % numero2) + "<br>"
+
+        //mostramos el resultado en el elemento con id resultado
+        document.getElementById("resultado").innerHTML = resultado;
+
+        //operadores de incremento y decremento
+        resultado = resultado + "<br>"
+                    + "si realizo la operacion "
+                    + "<span style='font-weight: bold, font-style: italic;'>numero1++</span>"
+                    + " el valor de numero1 se incrementa en 1: "+"<br>"
+                    + "El valor de ++numero1 es: " + ++numero1 + "<br>"
+                    + "tras el operador numero1 = " + numero1 + "<br>"
+
+        resultado = resultado + "<br>"
+                    + "si realizo la operacion "
+                    + "<span style='font-weight: bold, font-style: italic;'>numero2--</span>"
+                    + " el valor de numero2 se decrementa en 1: "+"<br>"
+                    + "El valor de --numero2 es: " + --numero2 + "<br>"
+                    + "tras el operador numero2 = " + numero2 + "<br>"
+
+
+    </script>
+    
+</body>
+</html>
