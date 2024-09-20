@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de Asignacion</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .tablaVerdad{
+            border-collapse: collapse;
+            margin:2em 0 1em 4em;
+            font-size: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            min-width: 150px;
+            box-shadow: 0 0 20px lightgray;
+            
+        }
+        .tablaVerdad caption span{
+            font-size: 1.5ex;
+        }
+        
+        /*Celdas de  encabezado*/
+        .tablaVerdad tr{
+            background-color: bisque;
+            text-align: middle;
+        }
+        /*Celdas de datos*/
+        .tablaVerdad th, .tablaVerdad td{
+            border: 1px solid black;
+            padding: 0.5em;
+            text-align: center;
+        
+        }
+
+        .titulo{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2.titulo{
+            color: cadetblue;
+
+        }
+        li{
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+        p{
+         font-style: italic;
+            margin-left: 3em;
+
+        }
+        p span{
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Operadores lógicos</h2>
+    <p style="font-style: italic; margin-left: 3em;">
+        Los operadores sirven para enlazar datos booleanos siguiendo <br>
+        las relaciones logicas or, and y not.
+    </p>
+    <p>
+        El resultado de una operacion logica es un valor booleano <br>
+        Los balores booleanos seran
+        <span >true</span> para verdadero <span>false</span> para falso
+        </p>
+<table class="TablaVerdad" id="tablaOR">
+    <caption>Tabla de verdad del operador OR</caption>
+    <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>resultado</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+
+</table>
+<table class="TablaVerdad" id="tablaAND">
+    <caption>Tabla de verdad del operador AND</caption>
+    <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>resultado</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+
+</table>
+<table class="TablaVerdad" id="tablaNOT">
+    <caption>Tabla de verdad del operador NOT</caption>
+    <tr>
+        <th>NOT A</th>
+        
+        <th>resultado</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        
+    </tr>
+    
+</table>
+<script>
+    //declaracion de variables
+    let A , B, C = 0; //vauriables para ejemplo
+    let texto; //variable para el resultado.
+
+    //voy a realizar la tabla de la verdad OR operador ||
+    texto = "funcion OR de dos variables booleanas \n\n";
+    A = false; B = false; texto += A + " || " + B + " = " + (A || B) + "\n"; 
+    A = false; B = true; texto += A + " || " + B + " = " + (A || B) + "\n";
+    A = true; B = false; texto += A + " || " + B + " = " + (A || B) + "\n";
+    A = true; B = true; texto += A + " || " + B + " = " + (A || B) + "\n";
+    alert(texto);
+    //voy  a realizar la tabla de la verdad del operador AND &&
+    texto = "funcion AND de dos variables booleanas \n\n";
+    A = false; B = false; texto += A + " && " + B + " = " + (A && B) + "\n";
+    A = false; B = true; texto += A + " && " + B + " = " + (A && B) + "\n";
+    A = true; B = false; texto += A + " && " + B + " = " + (A && B) + "\n";
+    A = true; B = true; texto += A + " && " + B + " = " + (A && B) + "\n";
+
+    alert(texto);
+
+    //voy a realizar la tabla de la verdad del operador NOT !
+    texto = "funcion NOT de una variable booleana \n\n";
+    A = false; texto += "!" + A + " = " + (!A) + "\n";
+    A = true; texto += "!" + A + " = " + (!A) + "\n";
+    alert(texto);
+
+    //nos va a venir bien estos operadores logicos para combinar operadores de comparacion:
+    A = 10; B = 1; C = 5;
+    texto = "A es " + A + " B es " + B + "\n";
+    //texto += "Esta " + C + " entre B y A: " + (B < C && C < A) + "\n";
+    texto += "Esta " + C + " entre B y A: " + (B < C && C < A) || (A < C && C < B)  + "\n"; //con esta 
+    texo += "Es 20 mayor que B o A: " + (20 > B || 20 > A) + "\n"; //
+    //queremos saber que A no es igual a B.
+    texto += "A no es igual a B: " + (!(A === B)) ;
+    
+    
+    alert(texto);
+    
+    
+</script>
+   
+    
+</body>
+</html>

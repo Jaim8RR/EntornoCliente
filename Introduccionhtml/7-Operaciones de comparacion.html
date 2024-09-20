@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de Asignacion</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .titulo{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2.titulo{
+            color: cadetblue;
+
+        }
+        li{
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+        p{
+         font-style: italic;
+            margin-left: 3em;
+
+        }
+        span{
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Operadores de Asignacion</h2>
+    <p style="font-style: italic; margin-left: 3em;">
+        Los operadores de comparacion nos permiten comparar dos valores, devolviendo un valor booleano<br>
+        true si la comparacion es cierta y false si la comparacion es falsa.
+    </p>
+    <p>
+        los operadores de comparacion son:
+        <span >            
+
+
+        </span>
+    </p>
+
+    <p id="resultado" style="text-align: center; color: blueviolet;"></p>
+    <script>
+        //declaracion de variables
+        let numero1 = 7;
+        let texto; //aqui guardaremos el mensaje del resultado de la comparacion
+
+        //el operador de igualdad (==) compara dos valores y devuelve true si son iguales y false si son distintos
+        texto = "numero1 == 7 es: " + (numero1 == 7);
+        alert(texto); //true
+        texto = "numero1 == 5 es: " + (numero1 == 5); 
+        alert(texto); //false
+
+        //el texto compara puede llegar a ser interpretado como un numero
+        texto = "numero1 == '7' es: " + (numero1 == '7');
+        alert(texto); //true
+
+        //Para evitar la interpretacion de texto como numero usamos el operador de igualdad estricta (===)
+        texto = "numero1 === '7' es: " + (numero1 === '7');
+        alert(texto); //false
+        //el operador de distinto (!=) compara dos valores y devuelve true si son distintos y false si son iguales
+        texto = "numero1 != 7 es: " + (numero1 != 7);
+        alert(texto); //false
+        texto = "numero1 != 5 es: " + (numero1 != 5);
+        alert(texto); //true
+
+        //el operador de distinto (!==) compara dos valores y devuelve true si son distintos y false si son iguales
+        texto = "numero1 !== '7' es: " + (numero1 !== '7');
+        alert(texto); //true
+
+        //el operador de mayor que (>) compara dos valores y devuelve true si el primero es mayor que el segundo
+        texto = "numero1 > 5 es: " + (numero1 > 5);
+        alert(texto); //true
+        texto = "numero1 > 7 es: " + (numero1 > 7);
+        alert(texto); //false
+
+        texto >> "numero1 >> 1 es: " + (numero1 >> 1);
+        alert(texto); //true
+        // >> 1 es un operador de desplazamiento de bits a la derecha
+        // 00111 (7) << 0110 (28) */
+        
+        
+        
+
+
+    </script>
+    
+</body>
+</html>

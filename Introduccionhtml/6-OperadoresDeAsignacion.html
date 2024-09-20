@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de Asignacion</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .titulo{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2.titulo{
+            color: cadetblue;
+
+        }
+        li{
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Operadores de Asignacion</h2>
+    <p style="font-style: italic; margin-left: 3em;">
+        Los operadores de asignacion nos permiten asignar un valor a una variable<br>
+    </p>
+
+    <p id="resultado" style="text-align: center; color: blueviolet;"></p>
+    <script>
+        //declaracion de variables
+        let texto;
+
+        //El valor de la variable texto es:
+        alert(texto); //undefined
+        //asignamos un valor a la variable texto;
+        texto = "Hola Mundo";
+        alert(texto); //Hola Mundo es el valor de la variable texto y es de tipo string.
+
+        // Podemos cambiar el valor de la variable en tiempo de ejecucion incluso el tipo de dato
+        texto = "hay"+ 25 + "alumnos en el aula y la nota media es \n " + 5.85;
+        alert(texto); //hay25alumnos en el aula y la nota media es 5.85
+
+        // cuidado con las operaciones aritmeticas y asignacion de tipo distintos:
+        texto = "la suma de 5 + 3 es: " + 5 + 3;
+        alert(texto); //la suma de 5 + 3 es: 53
+        //lo correcto seria:
+        texto = "la suma de 5 + 3 es: " + (5 + 3);
+        alert(texto); //la suma de 5 + 3 es: 8
+
+        
+
+
+    </script>
+    
+</body>
+</html>

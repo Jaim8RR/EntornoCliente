@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de Asignacion</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .tablaVerdad{
+            border-collapse: collapse;
+            margin:2em 0 1em 4em;
+            font-size: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            min-width: 150px;
+            box-shadow: 0 0 20px lightgray;
+            
+        }
+        .tablaVerdad caption span{
+            font-size: 1.5ex;
+        }
+        
+        /*Celdas de  encabezado*/
+        .tablaVerdad tr{
+            background-color: bisque;
+            text-align: middle;
+        }
+        /*Celdas de datos*/
+        .tablaVerdad th, .tablaVerdad td{
+            border: 1px solid black;
+            padding: 0.5em;
+            text-align: center;
+        
+        }
+
+        .titulo{
+            text-align: center;
+            color: blueviolet;
+        }
+        h2.titulo{
+            color: cadetblue;
+
+        }
+        li{
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+        p{
+         font-style: italic;
+            margin-left: 3em;
+
+        }
+        p span{
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Operadores lógicos</h2>
+    <p style="font-style: italic; margin-left: 3em;">
+        Los operadores ternarios nos permiten realizar una comparacion <br>
+        y asignar un valor en una sola linea de codigo
+    </p>
+    <p>
+        El resultado de una operador ternario devolverá la parte del operador que 
+        se <span> true </span> o <span> false </span>
+
+        </p>        
+        <p>
+La sintaxis de un operador ternario es:<br>
+&lt;condicion&gt; ? &lt;termino en caso de true&gt; : &lt;termino en caso de false&gt;
+        </p>
+
+<script>
+//declaracion de variables
+let a , b;
+let resultado;
+let numero;
+a= 5;
+b= 6;
+
+resultado = (a > b) ? "a es mayor que b" : "b es menor que a";
+//realiza la comparacion y asigna el resultado a la variable resultado
+alert(resultado); //b es menor que a
+
+//voy a verificar que un número esta en un rango
+numero = 7;
+alert(
+    (0 <= numero && numero <= 10) ? "El numero esta en el rango" : "El numero esta fuera de rango"
+)
+//no se debe anidar los operadores ternarios porque se vuelve ilegible
+resultado = ((numero%2) ==0 ) 
+? (numero>=0) 
+? "numero es par y positivo" : "numero es par y negativo" : (numero>=0) ? "numero es impar y positivo" : "numero es impar y negativo";
+alert(resultado);
+    
+</script>
+   
+    
+</body>
+</html>
