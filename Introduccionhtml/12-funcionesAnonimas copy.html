@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones anonimas</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+
+        .titulo {
+            text-align: center;
+            color: blueviolet;
+        }
+
+        h2.titulo {
+            color: cadetblue;
+
+        }
+
+        li {
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+
+        p {
+            font-style: italic;
+            margin-left: 3em;
+
+        }
+
+        p span {
+            font-weight: bold;
+
+        }
+
+        /*Plantilla de tabla*/
+        .Contenedor {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        thead,
+        td {
+            background-color: darkblue;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            overflow: hidden;
+
+            width: 600px;
+            box-shadow: 0 0 100px lightgray;
+        }
+
+        th,
+        td {
+            padding: 15px;
+
+
+        }
+
+        /*quiero haver que el bg sea transparente para que se aprecie el hover*/
+        tbody td {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            font-style: italic;
+            padding-left: 6em;
+        }
+
+        tr:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Funciones anonimas</h2>
+    <p>
+        una funcion anonima es una funcion que no tiene nombre.
+    </p>
+    <p>
+        sintaxis de funcion anonima:<br><br>
+        <span>funcion (&lt;parametros&gt;){&lt;sentencias&gt;}</span>
+        
+    </p>
+    <p od="referencia">
+        Consulta más información en la <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions" target="_blank">LinK a informacion</a>
+
+    </p>
+
+<p id="resultado">
+
+</p>
+
+<script>
+    //declaro variables
+    let producto = function(a,b){
+        return a*b;
+    }
+    let resultado = producto(3,5);
+
+    document.getElementById("resultado").innerText = "El resultado de la multiplicacion de 3 * 5 es: " + resultado;
+
+    //puedo crear una funcion haciendo uso de un constructor de objetos
+    let suma = new Function("a","b","return a+b"); //primer parametro es el nombre de la funcion, los siguientes son los parametros de la funcion y el ultimo string es la sentencia de la funcion
+
+    document.getElementById("resultado").innerText += "<br>El resultado de la suma de 3 + 5 es: " + suma(3,5);
+
+    //funcion anonima autoinvocada
+    (function() {
+        alert("Hola Mundo");// ponemos la funcion entre parentesis para que se ejecute inmediatamente
+    });
+    let miFuncion = function(){
+        alert("Hola Mundo");
+    }
+    
+
+</script>
+<!--EOF-->
+</body>
+
+</html>

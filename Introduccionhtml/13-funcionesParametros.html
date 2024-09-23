@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones parametros</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+
+        .titulo {
+            text-align: center;
+            color: blueviolet;
+        }
+
+        h2.titulo {
+            color: cadetblue;
+
+        }
+
+        li {
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+
+        p {
+            font-style: italic;
+            margin-left: 3em;
+
+        }
+
+        p span {
+            font-weight: bold;
+
+        }
+
+        .lista1 {
+            list-style: "👉";
+
+            li {
+                font-style: italic;
+                color: blueviolet;
+                padding-bottom: 1ex;
+            }
+        }
+
+        /*suntitulos*/
+        body h3 {
+            margin-left: 1em;
+            color: red;
+            text-shadow: 2px 2px 4px lightgray;
+        }
+
+        /*Plantilla de tabla*/
+        .Contenedor {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        thead,
+        td {
+            background-color: darkblue;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            overflow: hidden;
+
+            width: 600px;
+            box-shadow: 0 0 100px lightgray;
+        }
+
+        th,
+        td {
+            padding: 15px;
+
+
+        }
+
+        /*quiero haver que el bg sea transparente para que se aprecie el hover*/
+        tbody td {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            font-style: italic;
+            padding-left: 6em;
+        }
+
+        tr:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Parametros de funciones.</h2>
+    <ul class="lista1">
+        <li>La funcion puede tener cero o mas parametros.</li>
+        <li>Los parametros son los nombres que aparecen en la deficinicion de una funcion.</li>
+        <li>Los parametros son variables que se pasan a la funcion.</li>
+        <li>
+            cada argumento corresponde a un parametro.
+        </li>
+
+    </ul>
+    <h3>
+        Regla de los parametros:
+    </h3>
+
+    <ul class="lista1">
+        <li>No se especifica el tipo de dato de los parametros.</li>
+        <li>No se verifica el tipo de dato de los argumentos.</li>
+        <li>No se comprueba el numero de argumentos pasados a la funcion.</li>
+
+    </ul>
+    <h3>Parametros por defecto</h3>
+
+    <ul class="lista1">
+        <li>Si se llama a la funcion sin argumentos, los parametros tomaran los valores por defecto.
+            <p id="Result1"> </p>
+            <p id="Result2"> </p>
+        </li>
+        <li>Cuando llamamos a una funcion con más argumentos de los que se esperan, los argumentos adicionales pueden
+            capturarse usando el objeto arguments.</li>
+            <p id="Result3"> </p>
+
+    </ul>
+
+
+    <script>
+        //declaro variables
+        let texto;
+
+        function setTexto(id, texto) {
+            /*
+            Funcion para facilitar cambiar el texto de un 
+            elemento de texto en el documento html
+            id: referencia al elemento
+            texto: Cadena de texto a mostrar
+            */
+            document.getElementById(id).innerText = texto;
+        }
+        //funcion del producto
+        function producto(a, b) {
+            return a * b;
+        }
+        texto = "funcion producto(a,b) : producto(5) = " + producto(5) + "\n"
+            + "funcion producto(a,b) : producto(5,4) = " + producto(5, 4) + "\n";
+        setTexto("Result1", texto);
+        function suma(a, b) {
+            /*Funcion que suma dos numeros
+            
+            a: primer numero
+            
+            */
+            console.log("valor de b antes de la comprobacion: " + b);
+            b = (b == 0);// si b no es valido, se asigna 0
+
+
+            return a + b;
+        }
+        texto = "funcion suma(a,b) : suma(4) = " + suma(4) + "\n"
+            + "funcion suma(a,b) : suma(4,5) = " + suma(4, 5) + "\n";
+        setTexto("Result2", texto); //llamo a la funcion para escribir en el html
+
+        //parametros por exceso
+        function sumaValores() {
+            /*Funcion que suma los priemros 5 valores pasados como argumentos
+            si hay menos de 5 valores, se asigna 0 y si 
+            hay mas de 5 valores, se ignoran
+            No se define parametros en la funcion
+            en su lugar se usa el objeto arguments */
+            console.info("Numero de argumentos: " + arguments.length); //length es una propiedad del objeto arguments
+            //Lo hago incumpliendo el principio DRY porque aun no se ha explicado.
+            let argumento1 = arguments[0]; console.log("argumento1: " + argumento1);
+            let argumento2 = arguments[1]; console.log("argumento2: " + argumento2);
+            let argumento3 = arguments[2]; console.log("argumento3: " + argumento3);
+            let argumento4 = arguments[3]; console.log("argumento4: " + argumento4);
+            let argumento5 = arguments[4]; console.log("argumento5: " + argumento5);
+            //vamos a mejorrar el codigo un poco:
+            //esto sustituye a las 5 lineas anteriores
+            arguments[0] = arguments[0] ?? 0; console.log("arguments[0] " + arguments[0]);
+            arguments[1] = arguments[1] ?? 0; console.log("arguments[1] " + arguments[1]);
+            arguments[2] = arguments[2] ?? 0; console.log("arguments[2] " + arguments[2]);
+            arguments[3] = arguments[3] ?? 0; console.log("arguments[3] " + arguments[3]);
+            arguments[4] = arguments[4] ?? 0; console.log("arguments[4] " + arguments[4]);
+
+            return(
+            arguments[0] + arguments[1] + arguments[2] + arguments[3] + arguments[4]
+            );
+            
+
+        }
+        //llamo a la funcion suma valores con flata de argumentos
+        texto = 
+        "sumaValores(8,7,6) =" +sumaValores(8,7,6) + "\n" //caso de falta de argumentos
+        + "sumaValores(8,7,6,5,4,3) =" +sumaValores(8,7,6,5,4,3) + "\n" //caso de exceso de argumentos
+        + "sumaValores() =" +sumaValores() + "\n"; //caso de falta de argumentos
+        setTexto("Result3", texto);
+
+    </script>
+    <!--EOF-->
+</body>
+
+</html>

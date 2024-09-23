@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de Asignacion</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+
+        .titulo {
+            text-align: center;
+            color: blueviolet;
+        }
+
+        h2.titulo {
+            color: cadetblue;
+
+        }
+
+        li {
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+
+        p {
+            font-style: italic;
+            margin-left: 3em;
+
+        }
+
+        p span {
+            font-weight: bold;
+
+        }
+
+        /*Plantilla de tabla*/
+        .Contenedor {
+            display: flex;
+            justify-content: center;
+
+        }
+        thead, td {
+            background-color: darkblue;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            overflow: hidden;
+
+            width: 600px;
+            box-shadow: 0 0 100px lightgray;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            
+
+        }
+
+        /*quiero haver que el bg sea transparente para que se aprecie el hover*/
+        tbody td {
+            background-color: rgba(255, 255, 255, 0.7);
+            color:black;            font-style: italic;
+            padding-left: 6em;
+        }
+
+        tr:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Operadores de Tipos</h2>
+    <p style="font-style: italic; margin-left: 3em;">
+        Los operadores de tipo permitiran obtener informacion sobre el tipo de dato y <br>
+        manipular informacion en relacion al tipo de dato.
+    </p>
+    <p>
+        El operador <span>typeof</span> permite obtener el tipo de dato de una variable.</p>
+    <!--Lista con los tipos mas comunes-->
+    <div class="contenedor">
+        <table class="miTabla">
+            <thead>
+                <tr>
+                    <th>Nombre de variable</th>
+                    <th>Tipo de variable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cadena</td>
+                    <td id="cadena"></td>
+                </tr>
+                <tr>
+                    <td>entero</td>
+                    <td id="entero"></td>
+                </tr>
+                <tr>
+                    <td>doble</td>
+                    <td id="doble"></td>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td id="bool"></td>
+                </tr>
+                <tr>
+                    <td>lista</td>
+                    <td id="lista"></td>
+                </tr>
+                <tr>
+                    <td>registro</td>
+                    <td id="registro"></td>
+                </tr>
+                <tr>
+                    <td>fecha</td>
+                    <td id="fecha"></td>
+                </tr>
+                <tr>
+                    <td>miFuncion</td>
+                    <td id="miFuncion"></td>
+                </tr>
+                <tr>
+                    <td>sinInicializar</td>
+                    <td id="sinInicializar"></td>
+                </tr>
+                <tr>
+                    <td>nula</td>
+                    <td id="nula"></td>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+    <p>El operador <span>instanceof</span>
+        devuelve <span>true</span> si el objeto es una instancia de un tipo de otro objeto</p>
+
+    <script>
+        //declaro variables
+        let cadena = "Buenas tardes";
+        let entero = 32;
+        let doble = 3.14159265;
+        let bool = true;
+        let lista = [1, 2, 3, 4, 5];
+        let registro = { nombre: "David", apellido: "Barrientos" };
+        let fecha = new Date();
+        let miFuncion =
+            function miFun(etiqueta, valor) {
+                document.getElementById(etiqueta).innerText = valor;
+            };
+        let sinInicializar;
+        let nula = null;
+
+        miFuncion("cadena", typeof cadena);
+        miFuncion("entero", typeof entero);
+        miFuncion("doble", typeof doble);
+        miFuncion("bool", typeof bool);
+        miFuncion("lista", typeof lista);
+        miFuncion("registro", typeof registro);
+        miFuncion("fecha", typeof fecha);
+        miFuncion("miFuncion", typeof miFuncion);
+        miFuncion("sinInicializar", typeof sinInicializar);
+        miFuncion("nula", typeof nula);
+
+        //con instanceof puedo saber si un objeto es una instancia de otro objeto
+        let listaTrabajadores = ["Pedro", "Antonio", "Ana"];
+        alert("listaTrabajadores instanceof Objeto: " + (listaTrabajadores instanceof Object) + "\n" +
+            "listaTrabajadores instanceof Array: " + (listaTrabajadores instanceof Array) + "\n" +
+                "listaTrabajadores instanceof String: " + (listaTrabajadores instanceof String)
+            );
+
+        //podemos usarlo para verificar si una variable es numerica
+        let numero = 5;
+        let resultado;
+        resultado = (typeof numero == "number")
+            ? numero * numero : "No es un numero";
+        alert("El cuadrado de " + numero + "es " + resultado);
+
+        //caso especial:
+        let a = new Number("123"); alert("a === 123 : " + (a === 123)); //false Debido a que a es un objeto y 123 es un numero
+        let b = Number("123"); alert("b === 123 : " + (b === 123)); //true Debido a que b es un numero y 123 es un numero
+        alert(
+            "El valor y tipo de a es :" + a + " " + (typeof a)+ "\n" 
+            + "El valor y tipo de b es :" + b + " " + (typeof b) + "\n"
+            + "a instanceof Number: " + (a instanceof Number) + "\n"
+            + "b instanceof Number: " + (b instanceof Number) + "\n"
+        ); 
+
+    </script>
+
+
+
+</body>
+
+</html>
