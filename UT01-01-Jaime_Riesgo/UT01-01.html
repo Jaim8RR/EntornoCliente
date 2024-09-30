@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT01-01-Jaime_Riesgo</title>
+    <script src="./JaimeTools.js"></script>
+
+    <link rel="stylesheet" src="./UT01-01.css">
+
+</head>
+
+<body>
+    <p id="nombreAlumno"></p>
+    <p id="notaAlumno"></p>
+
+    <script>
+        //Programa que pida nombre, nota y según devuelva  un texto
+        //Debe aceptar decimales ya sea con . o , (usar replace) y ser tolerante a fallos, meter texto o cerrar la ventana
+        let alumno = ["NombreDefecto", 0];
+        function pedirNombreAlumno(nombreAlumno) {
+            alumno[0] = nombreAlumno;
+            console.log("El nombre del alumno es :" + alumno[0])
+            return nombreAlumno
+        }
+        function pedirNotaAlumno(notaAlumno) {
+            notaAlumno = notaAlumno.replace(",", ".");
+
+            alumno[1] = notaAlumno;
+            console.log("La nota del alumno es :" + alumno[1]);
+            return notaAlumno;
+
+        }
+        function calcularNota(alumno) {
+            nota = alumno[1];
+
+            switch (true) {
+                
+              case (nota >= 0 && nota < 5): return 'Suspenso">Suspenso</div>';
+                case (nota >= 5 && nota <= 5.4): return '<div id="Suficiente">suficiente</div>';
+                case (nota >= 5.5 && nota <= 6.4): return '<div id="Bien">bien</div>';
+                case (nota >= 6.5 && nota <= 8.4): return '<div id="Notable">notable</div>';
+                case (nota >= 8.5 && nota <= 10): return '<div id="Sobresaliente">sobresaliente</div>';
+                default: return '<div id="Error">Nota no valida</div>';
+                //estos return seria mejor que estuvieran en un array asociativo y se devolviera el valor de la key
+                
+
+            }
+
+        }
+
+        pedirNombreAlumno(prompt("Introduce nombre del alumno: "));
+        pedirNotaAlumno(prompt("Introduce nota del alumno: "));
+        document.getElementById("nombreAlumno").innerHTML = alumno[0];
+        document.getElementById("notaAlumno").innerHTML = calcularNota(alumno);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

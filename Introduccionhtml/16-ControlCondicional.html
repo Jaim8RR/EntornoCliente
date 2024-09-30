@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones parametros</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+
+        .titulo {
+            text-align: center;
+            color: blueviolet;
+        }
+
+        h2.titulo {
+            color: cadetblue;
+
+        }
+
+        li {
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+
+        p {
+            font-style: italic;
+            margin-left: 3em;
+
+        }
+
+        p span {
+            font-weight: bold;
+
+        }
+
+        .lista1 {
+            list-style: "👉";
+
+            li {
+                font-style: italic;
+                color: blueviolet;
+                padding-bottom: 1ex;
+            }
+        }
+
+        /*suntitulos*/
+        body h3 {
+            margin-left: 1em;
+            color: red;
+            text-shadow: 2px 2px 4px lightgray;
+        }
+
+        /*Plantilla de tabla*/
+        .Contenedor {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        thead,
+        td {
+            background-color: darkblue;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            overflow: hidden;
+
+            width: 600px;
+            box-shadow: 0 0 100px lightgray;
+        }
+
+        th,
+        td {
+            padding: 15px;
+
+
+        }
+
+        /*quiero haver que el bg sea transparente para que se aprecie el hover*/
+        tbody td {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            font-style: italic;
+            padding-left: 6em;
+        }
+
+       
+       
+        /*Bloque sintaxis*/
+        .conSintaxis {
+            background-color: lightgray;
+            color: green;
+            padding: 0 0 0 5em;
+            
+            font-size: 140%;
+        }
+    </style>
+    <script src="./Mytools.js"></script>
+</head>
+
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+
+    <p>
+        sintaxis (if):
+        <div class="conSintaxis">
+            <code>
+            
+            if (&lt;condicion&gt;) { <br>
+                &emsp;&lt;sentencias&gt; si condicion es true<br>
+            } else if (&lt;condicion&gt;) { <br>
+                &emsp;&lt;sentencias&gt; si la primera condicion es flase y la nueva true<br>
+            } else { <br>
+                &emsp;&lt;sentencias&gt; <br>
+            }
+        </code>
+        </div>
+        
+    </p>
+    <p>
+        sintaxis (switch):
+        <div class="conSintaxis">
+            <code>
+            
+            switch (&lt;variable a evaluar&gt;) { <br>
+                &emsp; case &lt; valor &gt; <br>
+                &emsp;&emsp; &lt;sentencias si = valor&gt; <br>
+                &emsp; break; <br>
+                &emsp; case &lt; valor2 &gt; <br>
+                &emsp;&emsp; &lt;sentencias si = valor2 &gt; <br>
+                &emsp; break; <br>
+                &emsp; default: <br>
+                &emsp;&emsp; &lt;sentencias si no es igual a ninguno de los anteriores&gt; <br>
+            }
+        </code>
+        </div>
+        
+    </p>
+    
+    
+  
+        <p id="Resultado"></p>
+    <script>
+        function Falsy(){
+            let valor;
+            if(!valor){
+                console.info(valor,"siempre es falso");
+            valor = null; if (!valor) { console.info(valor, "siempre es falso"); }
+            valor = "a" * 8; if (!valor) { console.info(valor, "siempre es falso"); }
+            valor = 0; if (!valor) { console.info(valor, "siempre es falso"); }
+            valor = 0n; if (!valor) { console.info(valor, "siempre es falso"); }
+            valor = ""; if (!valor) { console.info(valor, "siempre es falso"); }
+            valor = ' '; if (!valor) { console.info(valor, "siempre es falso"); }
+
+        }
+    }
+
+    //    Falsy();
+
+        function Trucy() {
+            let valor;
+            
+            //valores trythy
+            valor = true; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = {} ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = [] ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = 43 ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = -43 ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = 3,14 ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = "0" ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = "false" ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = new Document() ; if (valor) { console.info(valor, "siempre es verdadero"); }
+            valor = (Infinity) ; if (valor) { console.info(valor, "siempre es verdadero"); }
+
+
+        }
+      //  Trucy();
+
+        //comportamiento de falsy y trucy con AND Y OR
+        function condicionalesFalsyTruthy(){
+            let valor = "perro";
+
+            //un valor truthy siempre devolvera el segundo valor en un condicional AND;
+            console.info(true && valor);
+            console.info("cadena" && valor);
+            console.info(1 && valor);
+            console.info("0" && valor);
+
+            valor = "or con falsy";
+            //un valor falsy siempre devolvera el segundo valor en un condicional OR;ç
+
+            console.log(false || valor);
+            console.log(null || valor);
+            console.log(undefined || valor);
+            console.log(0 || valor);
+
+            let numero;
+            console.log(numero || "el valor no esta definido");
+
+        }
+        condicionalesFalsyTruthy();
+
+        //if anidados
+        function listaOperarios(indice) {
+            let operarios = ["Antonio" , "pepe", "Ana", "Sofia"];
+            console.log(operarios instanceof Array, operarios.length);
+            if (indice == 1){
+                return operarios[0];
+            }
+            else if (indice == 2){
+                return operarios[1];
+            }
+            else if (indice == 3){
+                return operarios[2];
+            }
+            else if (indice == 4){
+                return operarios[3];
+            }
+            else{
+                return "Numero de operario no valido";
+            }
+
+        }
+        function listaOperarios2(indice) {
+        let nombre; //variable local auxiliar
+        let operarios = ["antonio", "ana", "sofia" , "maria", "juan"];
+        console.log(indice, typeof indice);
+        //vamos a obligar a que el indice sea un numero
+
+        console.log(Number(indice), typeof Number(indice));
+
+        switch (Number(indice)) {
+            case 1:
+                nombre = operarios[0];
+                break;
+            case 2:
+                nombre = operarios[1];
+                break;
+            case 3:
+                nombre = operarios[2];
+                break;
+            case 4:
+                nombre = operarios[3];
+                break;
+            case 5:
+                nombre = operarios[4];
+                break;
+            default:
+                nombre = "Numero de operario no valido";
+                break;
+        }
+        return nombre;
+    }
+
+        console.log(
+            listaOperarios2(
+                prompt("Introduce el numero de operario")
+            )
+        );
+
+        /*
+        alert(
+            listaOperarios(
+                prompt("Introduce el numero de operario")
+            )
+        );
+        */
+
+        //Pero hay que pensar cuando nos es ventajoso usar un switch.
+        //version algo mejor
+
+        function listaOperarios3(indice){
+            let operarios = ["antonio", "ana", "sofia", "maria", "juan"];
+            if (1 <= indice && indice <= operarios.length){
+                return operarios[indice - 1];
+            }
+            else{
+                return "Numero de operario no valido";
+            }
+        }
+
+        //console.log(listaOperarios3(prompt("Introduce el numero de operario")));
+
+        function notaFinal(nota){
+            switch (Number (nota)) {
+                case 1 :
+                case 2 :
+                case 3 :
+                case 4 :
+                    return "Necesita mejorar";
+                    break;
+                case 5 : return "suficiente"; //al estar en una funcion return no necesita la funcion break
+                case 6 : return "bien";
+                case 7 : return "notable";
+                case 8 : return "notable";
+                case 9 :
+                case 10 : return "sibresaliente";
+                default: return "Nota no valida";
+                
+                }
+        }
+        //alert(notaFinal(prompt("Introduce la nota")));
+
+        //switch con varios casos validos un poquito mejorado:
+
+        function notaFinal2(nota){
+            switch (true){
+                case (1 == nota) :
+                case (2 == nota) :
+                case (3 == nota) :
+                case (4 == nota) :
+                    return "Necesita mejorar";
+                case (5 == nota) : return "suficiente"; //al estar en una funcion return no necesita la funcion break
+                case (6 == nota) : return "bien";
+                case (7 == nota) : 
+                case (8 == nota) : return "notable";
+                case (9 == nota) :
+                case (10 == nota) : return "sobresaliente";
+                default: return "Nota no valida";
+                
+                }
+                            }
+        alert(notaFinal2(prompt("Introduce la nota")));
+
+    </script>
+        <!--EOF-->
+</body>
+
+</html>

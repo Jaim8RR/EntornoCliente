@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones parametros</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+
+        .titulo {
+            text-align: center;
+            color: blueviolet;
+        }
+
+        h2.titulo {
+            color: cadetblue;
+
+        }
+
+        li {
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+
+        p {
+            font-style: italic;
+            margin-left: 3em;
+
+        }
+
+        p span {
+            font-weight: bold;
+
+        }
+
+        .lista1 {
+            list-style: "👉";
+
+            li {
+                font-style: italic;
+                color: blueviolet;
+                padding-bottom: 1ex;
+            }
+        }
+
+        /*suntitulos*/
+        body h3 {
+            margin-left: 1em;
+            color: red;
+            text-shadow: 2px 2px 4px lightgray;
+        }
+
+        /*Plantilla de tabla*/
+        .Contenedor {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        thead,
+        td {
+            background-color: darkblue;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            overflow: hidden;
+
+            width: 600px;
+            box-shadow: 0 0 100px lightgray;
+        }
+
+        th,
+        td {
+            padding: 15px;
+
+
+        }
+
+        /*quiero haver que el bg sea transparente para que se aprecie el hover*/
+        tbody td {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            font-style: italic;
+            padding-left: 6em;
+        }
+
+        tr:hover {
+            background-color: lightgray;
+        }
+    </style>
+    <script src="./Mytools.js"></script>
+</head>
+
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+    <h2 class="titulo">Ambito de variables.</h2>
+    <p>
+        Hay los siguientes tipos de reservas de espacio para datos:
+    </p>
+    <ul class="lista1">
+        <li>Por tipo declaracion :</li>
+        <ul>
+            <li><b>const</b>
+                <div>
+                    Reserva espacio para una variable que no cambia su valor.
+            </li>
+            </div>
+            <li><b>let</b>
+                <div>
+                    Reserva espacio para una variable que cambia su valor en tipo y valor.
+                    no afectado por el hoisting.
+                    </div></li>
+            <li><b>var</b>
+                <div>
+                    Reserva espacio para una variable que cambia su valor en tipo y valor.
+                    afectado por el hoisting en declaracion y no en iniciacion.
+                    </div></li>
+
+
+        </ul>
+        <li>
+            Por ambito
+        </li>
+        <ul>
+            <li>
+                Locales:
+                <ul>
+                    <li>
+                        Se define dentro de una funcion.
+                    </li>
+                    <li>
+                        Tienen un ambito local en la funcion.
+                    </li>
+                    <li>
+                        No se puede acceder a ellas fuera de la funcion.
+                    </li>
+                    <li>
+                        Podemos declarar variables con el mismo nombre en diferentes funciones.
+                    </li>
+                    <li>
+                        Las variables locales desaparecen al finalizar la funcion.
+                    </li>
+                    <li>
+                        Las variables delcaradas con let tinen ambito en el bloque donde son declaradas.<br>
+                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/let" target="_blank">Más informacion</a>
+                        ">Más informacion</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Globales:
+                <ul>
+                    <li>
+                        Se definen fuera de una funcion.
+                    </li>
+                    <li>
+                        Tienen un ambito global en el toda la pagina.
+                    </li>
+                    <li>
+                        Se puede acceder a ellas desde cualquier parte del documento.
+                    </li>
+                    <li>
+                        Podemos declarar variables con el mismo nombre en diferentes funciones.
+                    </li>
+                    <li>
+                        Las variables globales desaparecen al finalizar el documento.
+                    </li>
+           
+        </ul>
+        <p id="Resultado"></p>
+    <script>
+        //declaro variables
+        let resultado;
+
+       //ejemplo de variables locales
+        function autoVariablesLocal() {
+            a = 12;
+            b = 13;
+            return a + b;
+        }
+        
+        //console.log(autoVariablesLocal(), "valor de a: ", a, "valor de b: ", b); //las variables a y b no se han convertido en  globales al no estar delcaradas
+        function variablesLocal() {
+            let a = 5;
+            let b = 4;
+            return a + b;
+        }
+     /*   
+        console.log(
+            variablesLocal(), "valor de a: ", a, "valor de b: ", b //las variables a y b no se han convertido en  globales al no estar delcaradas
+        );
+       */ 
+/*
+        console.log("valor de funcion autoVariablesLocal: ", autoVariablesLocal());
+        console.log("valor de variablesLocal: ", variablesLocal());
+        console.log("valor de a: ", a, "valor de b: ", b); //las variables a y b recuperan su valor de variables globales
+*/
+//let declara variables con ambito de bloque
+let x,y;
+
+y = 12; //asigno valor a y antes del bloque
+console.info("valor de y antes del bloque: ",x , y); //valores de x e y antes del bloque
+
+if (true) {         //bloque de una funcion conditional
+    let x = 23;     //Esta x es una variable local en bloque nueva
+    y = 15;         //y no es una variable local en bloque, por lo que se modifica la variable global
+    console.info("valor de x en bloque: ", x, "valor de y en bloque: ", y); //valores de x e y en bloque
+    //x fuera del bloque es undefined
+    //y fuera del bloque es 15 porque se ha modificado
+}
+
+//Globales
+let texto = "hola mundo" //variable global
+
+console.log(texto);
+
+function mensaje() {
+//utilizo la variable global ya declarada
+texto += " como estas";
+setTexto("Resultado", texto);
+
+}
+//setTexto("Resultado", texto);
+
+
+mensaje();
+console.log(texto);
+
+const PI = 3.14159; //variable global constante
+function areaCirculo(radio) {
+    return PI * radio * radio;
+}
+//PI = 3.1416; //no se puede modificar una constante
+
+
+
+    </script>
+        <!--EOF-->
+</body>
+
+</html>
