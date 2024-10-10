@@ -6,22 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UT01-01-Jaime_Riesgo</title>
     <script src="./JaimeTools.js"></script>
-    <style>
-        body {
-            background-color: lightgray;
-        }
 
-        h1 {
-            text-align: center;
-
-        }
-
-        span {
-            padding: 5px;
-            border-radius: 5px;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="./UT01-01.css">
 
 
 </head>
@@ -37,58 +23,11 @@
         //Programa que pida nombre, nota y según devuelva  un texto
         //Debe aceptar decimales ya sea con . o , (usar replace) y ser tolerante a fallos, meter texto o cerrar la ventana
         let alumno = [null, null];
-        function pedirNombreAlumno(nombreAlumno) {
-            if (!nombreAlumno) {
-                nombreAlumno = "No se ha introducido nombre";
-                
-            }
-            alumno[0] = nombreAlumno;
-            console.log("El nombre del alumno es :" + alumno[0])
-            
-        }
-        function pedirNotaAlumno(notaAlumno) {
-            if (!notaAlumno) {
-                notaAlumno = "No se ha introducido nota";
-                
-            }
-
-            notaAlumno = notaAlumno.replace(",", ".");
-
-            alumno[1] = notaAlumno;
-            console.log("La nota del alumno es :" + alumno[1]);
-
-           
-
-        }
-        function calcularNota(alumno) {
-            nota = alumno[1];
-            //la array asociativa tendra el texto a escribir, el color de fondo y el nombre de la clase
-
-            resultadoNotas = {
-                Suspenso: { texto: "Suspenso", color: "red", clase: "Suspenso", notaMinima: 0, notaMaxima: 4.9 },
-                Suficiente: { texto: "Suficiente", color: "orange", clase: "Suficiente", notaMinima: 5, notaMaxima: 5.4 },
-                Bien: { texto: "Bien", color: "yellow", clase: "Bien", notaMinima: 5.5, notaMaxima: 6.4 },
-                Notable: { texto: "Notable", color: "green", clase: "Notable", notaMinima: 6.5, notaMaxima: 8.4 },
-                Sobresaliente: { texto: "Sobresaliente", color: "blue", clase: "Sobresaliente", notaMinima: 8.5, notaMaxima: 10 },
-                Error: { texto: "Nota no valida", color: "black", clase: "Error", notaMinima: 10000, notaMaxima: 1000 }
-
-            }
-
-
-
-            for (let resultado in resultadoNotas) {
-                if (nota >= resultadoNotas[resultado].notaMinima && nota <= resultadoNotas[resultado].notaMaxima) {
-                    return '<span style="background-color:' + resultadoNotas[resultado].color + '">' + resultadoNotas[resultado].texto + '</span>';
-
-                }
-            }
-            return '<span style="background-color:' + resultadoNotas.Error.color + '">' + resultadoNotas.Error.texto + '</span>';
-
-        }
+        
 
         pedirNombreAlumno(prompt("Introduce nombre del alumno: "));
         pedirNotaAlumno(prompt("Introduce nota del alumno: "));
-        document.getElementById("nombreAlumno").innerHTML = "Nombre alumno: " + alumno[0];
+        document.getElementById("nombreAlumno").innerHTML = "Nombre alumno: " + '<span class="nombreAlumno">'+alumno[0]+"</span>";
         document.getElementById("notaAlumno").innerHTML = "Resultado Notas: " + calcularNota(alumno);
 
 
