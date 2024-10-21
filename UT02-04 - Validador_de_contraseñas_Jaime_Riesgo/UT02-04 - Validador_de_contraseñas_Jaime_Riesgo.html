@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador y Validador de Contraseñas</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <h1>Generador y Validador de Contraseñas Seguras</h1>
+    <h2>Prueba el generador de contraseñas seguras y su validador</h2>
+
+    <button onclick="displayResults()">Generar Contraseña</button>
+    <p id="generated-password"></p>
+    <p id="validation-result"></p>
+
+    <hr>
+
+    <h2>Valida tu propia contraseña</h2>
+    <form onsubmit="event.preventDefault(); validateUserPassword();">
+        <label for="user-password">Introduce tu contraseña:</label>
+        <input type="password" id="user-password" name="user-password" required>
+        <button type="submit">Validar</button>
+    </form>
+    
+    <p id="user-validation-result"></p>
+
+</body>
+</html>
