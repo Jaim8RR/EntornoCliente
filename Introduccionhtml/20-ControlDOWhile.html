@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-ControlDoWhile</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+
+        .titulo {
+            text-align: center;
+            color: blueviolet;
+        }
+
+        h2.titulo {
+            color: cadetblue;
+
+        }
+
+        li {
+            margin-left: 3em;
+            padding-bottom: 1rex;
+        }
+
+        p {
+            font-style: italic;
+            margin-left: 3em;
+
+        }
+
+        p span {
+            font-weight: bold;
+
+        }
+
+        .lista1 {
+            list-style: "👉";
+
+            li {
+                font-style: italic;
+                color: blueviolet;
+                padding-bottom: 1ex;
+            }
+        }
+
+        /*suntitulos*/
+        body h3 {
+            margin-left: 1em;
+            color: red;
+            text-shadow: 2px 2px 4px lightgray;
+        }
+
+        /*Plantilla de tabla*/
+        .Contenedor {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        thead,
+        td {
+            background-color: darkblue;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+            overflow: hidden;
+
+            width: 600px;
+            box-shadow: 0 0 100px lightgray;
+        }
+
+        th,
+        td {
+            padding: 15px;
+
+
+        }
+
+        /*quiero haver que el bg sea transparente para que se aprecie el hover*/
+        tbody td {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            font-style: italic;
+            padding-left: 6em;
+        }
+
+       
+       
+        /*Bloque sintaxis*/
+        .conSintaxis {
+            background-color: lightgray;
+            color: green;
+            padding: 0 0 0 5em;
+            
+            font-size: 140%;
+        }
+    </style>
+    <script src="./Mytools.js"></script>
+</head>
+
+<body>
+    <h1 class="titulo">Introduccion a javascript</h1>
+
+    
+    <p>La sentencia Do while es una estructura de control de flujo que se repite mientras una condición sea verdadera</p>
+
+   <div id="Resultado"></div>
+    <script>
+        let texto;
+        let insertarTexto = (id,texto) => document.getElementById(id).innerText= texto;
+        let insertarHtml =  (id,texto) => document.getElementById(id).innerHtml= texto;
+        //creo texto de introduccion a while
+        texto = "la sentencia <b>dowhile</b> crea un bucle que ejecuta una sentencia especificada "
+        texto += "al menos una vez antes de que la condición de bucle se evalúe como falsa. La condición se evalúa" 
+        texto += " después de ejecutar la sentencia, lo que da como resultado que la sentencia especificada se ejecute al menos una vez.";
+        //Titulo de la sintaixs
+        insertarHtml("Resultado","<h3>Sintaxis do .. while</h3>");
+        //creo sintatxis de sentencia do while
+        texto = "do {\n";
+        texto += "   <sentencia>;\n";
+        texto += "} while (<condición_de_repeticion>); \n";
+        insertarTexto("Resultado",texto); texto = null;
+
+        //equivalente for de do while
+        function bucleSimple(){
+            let i = 0;
+            do{
+                console.log("i = "+i);
+                i++;
+            }while(i<10);
+        }
+        bucleSimple();
+        //siempre se ejecuta al menos una vez
+        function bucleSimple2(){
+            let i = 50;
+            do{
+                console.log("i =  "+i);
+                i++;
+            }while(i<10);
+        }
+        bucleSimple2();
+        function menu(){
+            let menu;
+            do {
+            menu = prompt("Elige una opcion: (+,-,*,/) \n esc para salir", "+");
+            switch(menu){
+                case "+":
+                    alert(Number(prompt("Primer numero"))+Number(prompt("Segundo numero")));
+                    break;
+                case "-":
+                    alert(Number(prompt("Primer numero"))-Number(prompt("Segundo numero")));
+                    break;
+                case "*":
+                    alert(Number(prompt("Primer numero"))*Number(prompt("Segundo numero")));
+                    break;
+                case "/":
+                    alert(Number(prompt("Primer numero"))/Number(prompt("Segundo numero")));
+                    break;
+                case "esc":
+                    alert("Saliendo del programa");
+                    break;
+                
+           }
+        } while(!menu);
+    }
+    //menu();
+
+    //viene muy bien para funciones de verificacion de datos
+    function verificarRango(){
+
+        let valor;
+        do {
+            valor = prompt("Introduce un valor entre 0 y 10?");
+            let limiteInferior = 0;
+            let limiteSuperior = 10;
+            if (valor && limiteInferior <= valor && valor <= limiteSuperior){
+                return valor;
+            }
+            else console.error("%cValor no valido","background-color:yelow; color:red");
+            
+        } while (valor);
+        }
+    
+    //console.log(verificarRango()+ verificarRango());
+    //bucle reducidos, usad  con precaucion
+    function saludo(){
+        do{
+            let nombre = prompt("Introduce tu nombre\n<esc> para salir");
+                if (nombre){
+                    alert("Hola "+nombre);
+                } 
+        }while(nombre);
+
+    }
+
+    //saludo();
+    //conclusiones
+    texto= "Hay que tener en cuenta que se ejecuta el interior del bucle al menos una vez";
+    texto += "Independientemente de la condición de salida sea verdadera o falsa";
+    texto += "Esto significa que se puede dar el caso de que el bucle se ejecute con errores ajenos";
+    texto += "Ademas de tener en cuenta que como las otroas secuencia de control forman un bloque de ejecucion";
+    texto += "Esto afecta al funcionamiento de la sentencia let";
+
+
+
+    </script>
+        <!--EOF-->
+</body>
+
+</html>

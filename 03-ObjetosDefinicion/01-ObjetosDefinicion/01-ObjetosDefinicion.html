@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../myStyle.css">
+</head>
+<body>
+    <h1 class="titulo">Introduccion a javaScript</h1>
+    <h2 class="titulo">Objetos de definicion</h2>
+   
+    <p >Los objetos son una colección de datos y/o funcionalidades relacionadas que representan algo en la vida real.</p>
+    <p>Por ejemplo, un objeto podría representar un usuario con propiedades como nombre y dirección y comportamientos como caminar y correr.</p>
+    <div class="DivParrafo" id="texto1">
+
+    </div>
+    <div class="DivParrafo" id="Referencias">
+        <p>Consulata mas información</p>
+        <span class="Enlace" onclick="mostrarEnlace(0)">Primitivos</span>
+        <span class="Enlace" onclick="mostrarEnlace(1)">Objetos Globales</span>
+        <span class="Enlace" onclick="mostrarEnlace(2)">Objetos de alto nivel</span>
+        
+    </div>
+  
+
+    
+    <script>
+        const setHtml = (id,texto) => {
+            document.getElementById(id).innerHTML = texto;
+        }
+        const setTexto = (id,texto) => {
+            document.getElementById(id).innerText = texto;
+        }
+
+        
+
+        function mostrarEnlace(i) {
+            //abre una nueva ventana con el enlace
+            let listaEnlaces = ["https://developer.mozilla.org",
+        "https://www.youtube.com",
+        "https://www.facebook.com"];
+        
+            window.open(listaEnlaces[i]);
+        
+
+        
+    }
+        
+
+         
+        
+        let cadena = "Hola Mundo";              //dato primitivo de tipo string
+        let pi = 3.14159265;                    //dato primitivo de tipo number
+        let enteroGrande = 1234567890n **2n;     //dato primitivo de tipo bigint
+        let boleano = true;                     //dato primitivo de tipo boolean
+        let sinDefinir = undefined;             //dato primitivo de tipo undefined
+        let simbolo = Symbol("etiqueta");       //dato primitivo de tipo symbol
+        let nulo = null;                        //objeto especial que se comporta como un primitivo
+
+        //las funciones de objetos primitivos no alteran el valor original
+        console.log(cadena.replace("Mundo", "Universo")); //Hola Universo
+        console.log(cadena); //Hola Mundo
+
+        console.log(pi.toLocaleString()); //3.14159265
+        console.log(pi); //3.14159265
+
+        //objetos globales
+        texto = "Los objetos globales son: los que no dependen del navegador, integrados en javaScript \n\n.";
+        texto += "Varios ejemplos son: \n";
+        texto += "\t -String\n";
+        texto += "\t -Number\n";
+        texto += "\t -Boolean\n";
+        texto += "\t -Date\n";
+        texto += "\t -Math\n";
+        texto += "\t -RegExp\n";
+        texto += "\t -Array\n";
+        texto += "\t -Function\n";
+        texto += "\t -Object\n";
+        setHtml("texto1", texto); texto = "";
+
+        //obbjetos de alto nivel
+        texto = document.getElementById("texto1").innerHTML + "\n\n";
+        texto += "Los objetos de alto nivel son: los que dependen del navegador."        
+        texto += "\t -Window\n";
+        texto += "\t -Screen\n";
+        texto += "\t -Navigator\n";
+        texto += "\t -Location\n";
+        texto += "\t -History\n";
+        texto += "\t -Document\n";
+
+        //definicion de objeto:
+        texto = document.getElementById("texto1").innerHTML + "\n\n";
+        texto += "Un objeto tendrá como minimo un grupo de pares clave valor .\n\n";
+        texto += "Un objeto tendrá los siguientes elementos:\n\n";
+        texto += "\t - <b> Propiedades: </b>: \tSe definen en un modo nombre:valor, por ejemplo: nombre, apellido, etc.\n";
+        texto += "\t - <b> Métodos: </b>: \tAcciones que se pueden ejecutar sobre un objeto.";
+        setHtml("texto1", texto); texto = null;
+        //Ejemlo de creacion basica de objeto:
+
+        let datos ={
+            nombre: "Juan",
+            apellido: "Perez",
+            getNombre: () => datos.nombre + " " + datos.apellido
+        };
+
+
+    </script>
+</body>
+</html>

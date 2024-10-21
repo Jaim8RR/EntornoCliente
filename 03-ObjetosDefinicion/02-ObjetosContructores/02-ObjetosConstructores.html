@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Constructores</title>
+    <link rel="stylesheet" href="../myStyle.css">
+</head>
+<body>
+    <h1 class="titulo">Objetos  em javaScript</h1>
+    <h2 class="titulo">Constructores de Objetos</h2>
+    <p>Un constructor es un metodo especial para crear un objeto a partir de una clase.</p>
+    <p> Una clase es una plantilla para crear objetos.</p>
+
+    
+    
+   
+    
+    
+    <div class="DivParrafo" id="texto1">
+
+    </div>
+    <div class="DivParrafo" id="Referencias">
+        <p>Consulata mas información</p>
+        <ul>
+        <li><span class="Enlace" onclick="mostrarEnlace(0)">Primitivos </span></li>
+        <li><span class="Enlace" onclick="mostrarEnlace(1)">Objetos Globales</span></li>
+        <li><span class="Enlace" onclick="mostrarEnlace(2)">Objetos de alto nivel</span></li>
+        </ul>
+    </div>
+  
+
+    
+    <script>
+        const setHtml = (id,texto) => {
+            document.getElementById(id).innerHTML = texto;
+        }
+        const setTexto = (id,texto) => {
+            document.getElementById(id).innerText = texto;
+        }
+
+        
+
+        function mostrarEnlace(i) {
+            //abre una nueva ventana con el enlace
+            let listaEnlaces = [
+        "https://developer.mozilla.org",
+        "https://www.youtube.com",
+        "https://www.facebook.com"];
+        
+            window.open(listaEnlaces[i]);
+        
+
+        
+    }
+        //Ejemlo de creacion basica de objeto:
+
+        let datos ={
+            nombre: "Juan",
+            apellido: "Perez",
+            getNombre: () => datos.nombre + " " + datos.apellido
+        };
+
+        //ejemplo de creacion de objeto de tipo primitivo
+        let cadena1 = new String("texto");
+        let cadena2 = "texto";
+
+        const numero1 = new Number(10);
+        const numero2 = 10;
+
+        const boolean1 = new Boolean(true);
+        const boolean2 = true;
+        
+        const nulo = null;
+
+
+        const RegExp1 = new RegExp("/[a-z]/");
+        const RegExp2 = /[a-z]/;
+
+        const function1 = new Function("a","b","return a+b");
+        const function2 = (a,b) => a+b;
+
+        //hay objetos globales que tenemos que instanciar para poder usarlos
+        const fecha1 = new Date();
+        let mes = fecha1.getMonth();
+        let year = fecha1.getFullYear();
+
+        //hay objetos que no pueden ser instanciados
+        //let calculo = new Math(); //math no tiene constructor
+        const potencia = (x,y=2) => Math.pow(x,y);
+
+        console.log(potencia(5,5));
+
+        //de hecho casi todos los objetos son instancias de object
+
+        
+        console.info("function2 es una instancia de Function: ", function2 instanceof Function);
+        console.info("function es una instancia de Object: ", Function instanceof Object);
+        console.info("cadena1 es una instancia de String: ", cadena1 instanceof String);
+        console.info("String es una instancia de Object: ", String instanceof Object);
+
+        //pero no todos
+        console.info("typeof nulo", typeof nulo);
+        console.info("typeof null", typeof null);
+        //console.info("nulo instanceof null", nulo instanceof null); //no se puede hacer
+        console.info("nulo instanceof Object", nulo instanceof Object);//no se puede hacer
+
+        const valor= new Object("patata"); //crea un objeto de tipo string
+        console.log(valor.valueOf()); //patata
+
+        //puedo añadir una propiedad a un objeto
+        //constante afecta a su primitivo y su tipo como objeto, pero no a sus propiedades
+        valor.fruta = "manzana";
+        console.log(valor.fruta); //manzana
+        console.log(valor.valueOf()); //patata
+
+        const valor2 = {}; //crea un objeto vacio
+
+        //con assign puedo copiar propiedades a un objeto
+        Object.assign(valor2,valor);
+        console.log(valor2.fruta); //manzana
+
+        //asi creo un objeto con propiedades iguales a otro
+        const valor3 = new Object("hola");
+        const valor4 = new Object("hola");
+        const valor5 = valor4;
+
+        console.log(valor3 == valor4, valor4 == valor5); //false, true
+
+        //creo un objeto
+       // const persona = new Object({nombre: null,apellido: null,codigo: null,});
+        const persona = new Object({nombre: null,apellido: null,codigo: null});
+        console.log(persona);
+
+        const persona1 = Object.create(persona);
+        persona1.nombre = "Juan";
+        persona1.apellido = "Perez";
+        persona1.codigo = 1234;
+
+        let claves = Object.keys(persona);
+        console.log(claves);
+        persona.nombre = "Pedro";
+        persona.apellido = "Garcia";
+        persona.codigo = 5678;
+        let valores = Object.entries(persona);
+        console.log(valores);
+
+        let datos2 = [
+            ["propiedad1", "dato1"],
+            ["propiedad2", "dato2"],
+            ["propiedad3", "dato3"]
+
+        ]
+        //creo un objeto a partir de un array
+        const miObjeto = Object.fromEntries(datos2);
+
+        console.log(miObjeto);
+        console.log(miObjeto.propiedad1);
+        
+        //Puedo sellar un objeto
+        const patata = {
+            nombre: "patata",
+            precio: 25.3
+        };
+        //puedo añadir propiedades
+        patata.color = "marron";
+        patata.pesomedio = 0.5;
+        cosole.info("Keys de patata", Object.keys(patata));
+        //para mostrat los valores de patata
+        console.info("Values de patata", Object.values(patata));
+
+        //sello el objeto
+        Object.seal(patata); //no puedo añadir propiedades
+
+        //patata.datonuevo = "nuevo dato"; //no se puede hacer
+        patata.color = "verde"; //se puede hacer
+        console.log(patata.color);
+
+        //hago una copia de patata
+        const tomate = new Object();
+        Object.assign(tomate,patata);
+
+        //puedo congelar un objeto
+        Object.freeze(tomate); //no puedo añadir ni modificar propiedades
+        //tomate.color = "rojo"; //no se puede hacer
+        
+
+
+
+
+        
+
+
+
+        
+
+        
+        
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
