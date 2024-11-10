@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles en JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="js_integration.html">Integración de JavaScript</a>
+        <a href="output_methods.html">Salida de Información</a>
+        <a href="variables.html">Creación de Variables</a>
+        <a href="operators.html">Operadores</a>
+        <a href="ternary_operator.html">Operador Ternario</a>
+        <a href="type_operators.html">Operadores de Tipo</a>
+        <a href="functions.html">Creación de Funciones</a>
+        <a href="missing_arguments.html">Funciones con Faltan Argumentos</a>
+        <a href="anonymous_arrow_functions.html">Funciones Anónimas y Flecha</a>
+        <a href="hoisting.html">Hoisting</a>
+        <a href="variable_scope.html">Ámbito de Variables</a>
+        <a href="conditional_control.html">Control Condicional</a>
+        <a href="loops.html">Bucles</a>
+        <a href="while_loops.html">Bucles While y Do...While</a>
+        <a href="loop_control.html">Control de Salida</a>
+        <a href="falsy_truthy.html">Valores Falsy y Truthy</a>
+    </nav>
+    <h1>Bucles en JavaScript</h1>
+    <h2>Ejemplos de for, for...in, for...of y .forEach()</h2>
+    <p>
+        Los bucles son estructuras de control que permiten repetir un bloque de código varias veces.
+        En JavaScript, los bucles más comunes son el bucle for, el bucle for...in, el bucle for...of y el método .forEach().
+        
+    </p>
+    <p>
+        Abre la consola del navegador para ver los resultados de los ejemplos.
+    </p>
+
+    <script>
+        // Bucle for clásico
+        console.log("Bucle for clásico:");
+        for (let i = 0; i < 5; i++) {
+            console.log("Iteración:", i);
+        }
+
+        // Bucle for...in: recorre propiedades de un objeto
+        const persona = { nombre: "Jaime", edad: 25, ciudad: "Madrid" };
+        console.log("Bucle for...in:");
+        for (let propiedad in persona) {
+            console.log(propiedad + ":", persona[propiedad]);
+        }
+
+        // Bucle for...of: recorre elementos de un iterable (como un array)
+        const numeros = [10, 20, 30, 40];
+        console.log("Bucle for...of:");
+        for (let numero of numeros) {
+            console.log(numero);
+        }
+
+        // Método .forEach(): ejecuta una función para cada elemento del array
+        console.log("Método .forEach():");
+        numeros.forEach((numero, indice) => {
+            console.log("Índice:", indice, "Valor:", numero);
+        });
+    </script>
+</body>
+</html>

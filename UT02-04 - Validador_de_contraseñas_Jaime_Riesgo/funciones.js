@@ -41,7 +41,7 @@ function generatePassword() {
     
     let password = '';
     
-    while (password.length < 12 || !validatePassword(password)) {
+    while (password.length < 12 || !validatePassword(password)) {//|| !validatePassword(password) esto si queremos que la contraseña generada sea valida siempre
         password = '';
         let lastChar = '';
         
@@ -70,12 +70,12 @@ function displayResults() {
     let generatedPasswordText = 'Contraseña Generada: ' + generatedPassword;
     document.getElementById('generated-password').textContent = generatedPasswordText;
     
-    document.getElementById('generated-password').textContent = "Contraseña Generada:" + generatedPassword;
-    document.getElementById('validation-result').textContent = "¿Es válida? " +isValid ? 'Sí' : 'No';
+    document.getElementById('generated-password').textContent = "Contraseña Generada: " + generatedPassword;
+    document.getElementById('validation-result').textContent = "La contraseña generada " + (isValid ? "es segura ✅" : "no es segura ❌");
 }
 function validateUserPassword() {
     let userPassword = document.getElementById('user-password').value;
     let isValid = validatePassword(userPassword);
 
-    document.getElementById('user-validation-result').textContent = "¿Es válida tu contraseña?" + (isValid ? "Sí" : "No");
+    document.getElementById('user-validation-result').textContent = "Tu contraseña " + (isValid ? "es segura ✅" : "no es segura ❌");
 }

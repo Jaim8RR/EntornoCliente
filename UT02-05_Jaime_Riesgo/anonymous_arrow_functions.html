@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Anónimas y Flecha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="js_integration.html">Integración de JavaScript</a>
+        <a href="output_methods.html">Salida de Información</a>
+        <a href="variables.html">Creación de Variables</a>
+        <a href="operators.html">Operadores</a>
+        <a href="ternary_operator.html">Operador Ternario</a>
+        <a href="type_operators.html">Operadores de Tipo</a>
+        <a href="functions.html">Creación de Funciones</a>
+        <a href="missing_arguments.html">Funciones con Faltan Argumentos</a>
+        <a href="anonymous_arrow_functions.html">Funciones Anónimas y Flecha</a>
+        <a href="hoisting.html">Hoisting</a>
+        <a href="variable_scope.html">Ámbito de Variables</a>
+        <a href="conditional_control.html">Control Condicional</a>
+        <a href="loops.html">Bucles</a>
+        <a href="while_loops.html">Bucles While y Do...While</a>
+        <a href="loop_control.html">Control de Salida</a>
+        <a href="falsy_truthy.html">Valores Falsy y Truthy</a>
+    </nav>
+    <h1>Funciones Anónimas y Flecha en JavaScript</h1>
+    <h2>Ejemplos de funciones anónimas y funciones flecha</h2>
+    <p>
+        Las funciones anónimas y las funciones flecha son formas de crear funciones sin asignarles un nombre.
+        Son útiles para escribir funciones pequeñas y rápidas que no necesitan ser reutilizadas.
+    </p>
+
+    <script>
+        // Esta es una función anónima (sin nombre) que se asigna a una variable.
+        // La función anónima es útil cuando no planeamos reutilizar la función en otros contextos.
+        let saludoAnonimo = function() {
+            console.log("Hola desde una función anónima");
+        };
+        saludoAnonimo();
+
+        // Función flecha: una sintaxis más breve para crear funciones.
+        // La flecha => reemplaza la palabra "function" y permite hacer funciones más pequeñas y compactas.
+        let saludoFlecha = () => {
+            console.log("Hola desde una función flecha");
+        };
+        saludoFlecha();
+
+        // Otra función flecha que toma un parámetro y retorna un valor.
+        // Aquí usamos una sola línea sin llaves, lo cual está permitido cuando solo hay una expresión en la función.
+        let sumar = (a, b) => a + b;
+        console.log("Resultado de sumar(2, 3):", sumar(2, 3)); // Salida: 5
+
+        // En resumen:
+        // - Las funciones flecha son una forma rápida de escribir funciones.
+        // - Si la función tiene solo una línea, no hace falta usar llaves ni "return".
+        // - Las funciones flecha heredan el "this" del contexto en el que fueron creadas.
+    </script>
+</body>
+</html>

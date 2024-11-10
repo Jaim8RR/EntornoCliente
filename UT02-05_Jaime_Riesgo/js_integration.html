@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Integración de JS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // JavaScript en línea: ejecuta una alerta en este documento HTML
+        function showInlineAlert() {
+            alert("Este es un ejemplo de integración en línea de JavaScript.");
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="js_integration.html">Integración de JavaScript</a>
+        <a href="output_methods.html">Salida de Información</a>
+        <a href="variables.html">Creación de Variables</a>
+        <a href="operators.html">Operadores</a>
+        <a href="ternary_operator.html">Operador Ternario</a>
+        <a href="type_operators.html">Operadores de Tipo</a>
+        <a href="functions.html">Creación de Funciones</a>
+        <a href="missing_arguments.html">Funciones con Faltan Argumentos</a>
+        <a href="anonymous_arrow_functions.html">Funciones Anónimas y Flecha</a>
+        <a href="hoisting.html">Hoisting</a>
+        <a href="variable_scope.html">Ámbito de Variables</a>
+        <a href="conditional_control.html">Control Condicional</a>
+        <a href="loops.html">Bucles</a>
+        <a href="while_loops.html">Bucles While y Do...While</a>
+        <a href="loop_control.html">Control de Salida</a>
+        <a href="falsy_truthy.html">Valores Falsy y Truthy</a>
+    </nav>
+    <h1>Formas de Integración de JavaScript</h1>
+    <h2>Integración en línea, interna y externa</h2>
+    <p>
+        La integración de JavaScript en un documento HTML puede realizarse de tres formas principales:
+    </p>
+    <ul>
+        <li>En línea: directamente en el documento HTML.</li>
+        <li>Interna: dentro de una etiqueta <code>&lt;script&gt;</code> en el documento HTML.</li>
+        <li>Externa: mediante un archivo JavaScript externo.</li>
+    </ul>
+
+    <!-- Ejemplo de integración en línea -->
+    <button onclick="showInlineAlert()">Alerta en línea</button>
+    
+
+    <!-- Integración interna -->
+    <script>
+        console.log("Este es un mensaje de JavaScript integrado internamente.");
+    </script>
+
+    <!-- Integración externa y en linea-->
+    <button onclick="showInlineAlert2()">Externa</button>
+    <script src="script.js"></script>
+</body>
+</html>
