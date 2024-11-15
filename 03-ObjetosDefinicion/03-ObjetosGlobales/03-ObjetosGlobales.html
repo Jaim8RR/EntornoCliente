@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Constructores</title>
+    <link rel="stylesheet" href="../myStyle.css">
+</head>
+<body>
+    <h1 class="titulo">Objetos  em javaScript</h1>
+    <h2 class="titulo">Constructores de Objetos</h2>
+    <p>Un constructor es un metodo especial para crear un objeto a partir de una clase.</p>
+    <p> Una clase es una plantilla para crear objetos.</p>
+
+    
+    
+   
+    
+    
+    <div class="DivParrafo" id="texto1">
+
+    </div>
+    <div class="DivParrafo" id="Referencias">
+        <p>Consulata mas información</p>
+        <ul>
+        <li><span class="Enlace" onclick="mostrarEnlace(0)">Primitivos </span></li>
+        <li><span class="Enlace" onclick="mostrarEnlace(1)">Objetos Globales</span></li>
+        <li><span class="Enlace" onclick="mostrarEnlace(2)">Objetos de alto nivel</span></li>
+        </ul>
+    </div>
+  
+
+    
+    <script>
+        const setHtml = (id,texto) => {
+            document.getElementById(id).innerHTML = texto;
+        }
+        const setTexto = (id,texto) => {
+            document.getElementById(id).innerText = texto;
+        }
+
+        
+
+        function mostrarEnlace(i) {
+            //abre una nueva ventana con el enlace
+            let listaEnlaces = [
+        "https://developer.mozilla.org",
+        "https://www.youtube.com",
+        "https://www.facebook.com"];
+        
+            window.open(listaEnlaces[i]);
+        
+
+        
+    }
+        //introduccion a objetos globales
+        texto = "El objeto array se utiliza para la creacion y manipulacion de arrays";
+        setHtml("texto1",texto); texto = null;
+        //const Lista = new Array();
+        const Lista = ["valor1","valor2","valor3"];
+        Lista[0] = "patata";
+        Lista[1] = "cebolla";
+        console.log(Lista[2],lista.valueOf());
+
+        const primos = [1,2,3,5,7,11,13,17,19,23];
+
+        //podemos recorrer el array con su indice
+        for (let i in primos){
+            console.log(primos[i]);
+        };
+        primos.forEach(element =>console.log(element)); 
+
+        [1,2,3,4,5].forEach(element => console.log(element));
+
+        //metodos estaticos
+
+        //crea una instancia de un objeto iterable
+        let valores = Array.from("patata");
+        console.log(valores);
+
+        let doubleprimos = Array.from(primos, valor => valor * 2);
+        console.log(doubleprimos);
+
+
+
+
+    </script>
+</body>
+</html>
