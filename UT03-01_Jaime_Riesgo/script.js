@@ -100,9 +100,7 @@ function mayorDe18(fechaNacimiento) {
 
     // Si el mes actual es antes que el mes de nacimiento o es el mismo mes pero el día actual es anterior al día de nacimiento,
     // restamos un año a la edad
-    if (
-        hoy.getMonth() < fechaNac.getMonth() ||(hoy.getMonth() === fechaNac.getMonth() && hoy.getDate() < fechaNac.getDate())
-    ) {
+    if (hoy.getMonth() < fechaNac.getMonth() ||(hoy.getMonth() === fechaNac.getMonth() && hoy.getDate() < fechaNac.getDate())) {
         edad--;
     }
    // alert(edad);
