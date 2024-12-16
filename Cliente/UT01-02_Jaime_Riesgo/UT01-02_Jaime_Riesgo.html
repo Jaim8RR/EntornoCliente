@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+            text-align: center;
+            background-image: url("./numeros.png");
+            
+        }
+        h1 , h2 {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            background-color: lightgray;
+            box-shadow: 2px 2px 5px black;
+            margin: 0 auto;
+        }
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            background-color: yellow;
+            font-size: 32px;
+        }
+        table table:not(.multiplo) {
+            
+            background-color: beige
+        }
+        .multiplo {
+            background-color: lightblue;
+        }
+        footer {
+            margin-top: 10px;
+                     
+            width: 100%;
+            background-color: black;
+            color: white;            
+            padding: 10px;
+        }
+
+    </style>
+    <script src="UT01-02_Jaime_Riesgo.js"></script>
+</head>
+<body>
+    <h1>UT01-02_Jaime_Riesgo</h1>
+    <h2>Tablas de multiplicar</h2>
+    <table id="tablasDeMultiplicar"></table>
+    <script>
+              
+        let tabla = "<table>";           
+        
+        document.getElementById("tablasDeMultiplicar").innerHTML = tabla4x3();
+       
+
+       
+    </script>
+    <footer>
+        <p>Jaime Riesgo Rossi 2ºDAW</p>
+    </footer>
+    
+</body>
+</html>

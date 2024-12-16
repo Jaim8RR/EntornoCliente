@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Hoisting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="js_integration.html">Integración de JavaScript</a>
+        <a href="output_methods.html">Salida de Información</a>
+        <a href="variables.html">Creación de Variables</a>
+        <a href="operators.html">Operadores</a>
+        <a href="ternary_operator.html">Operador Ternario</a>
+        <a href="type_operators.html">Operadores de Tipo</a>
+        <a href="functions.html">Creación de Funciones</a>
+        <a href="missing_arguments.html">Funciones con Faltan Argumentos</a>
+        <a href="anonymous_arrow_functions.html">Funciones Anónimas y Flecha</a>
+        <a href="hoisting.html">Hoisting</a>
+        <a href="variable_scope.html">Ámbito de Variables</a>
+        <a href="conditional_control.html">Control Condicional</a>
+        <a href="loops.html">Bucles</a>
+        <a href="while_loops.html">Bucles While y Do...While</a>
+        <a href="loop_control.html">Control de Salida</a>
+        <a href="falsy_truthy.html">Valores Falsy y Truthy</a>
+    </nav>
+    <h1>Ejemplos de Hoisting en JavaScript</h1>
+    <h2>Hoisting y diferencias entre var, let y const</h2>
+    <p>
+        El hoisting es un comportamiento en JavaScript donde las declaraciones de variables y funciones se "elevan" al inicio de su contexto de ejecución. Esto significa que las variables y funciones pueden ser utilizadas antes de que se declaren en el código.
+    </p>
+
+    <script>
+        // Ejemplo de hoisting con var: la declaración de var se "eleva" al inicio del contexto.
+        console.log("Antes de declarar x:", x); // undefined, debido al hoisting
+        var x = 5;
+        console.log("Después de declarar x:", x); // 5
+
+        // Hoisting NO ocurre con let y const, esto causará error si se intenta usar antes de la declaración.
+        // Descomentar las líneas a continuación generará un error.
+        // console.log(y); // Error: Cannot access 'y' before initialization
+        let y = 10;
+        console.log("Después de declarar y:", y); // 10
+
+        // const es similar a let pero debe inicializarse en el momento de la declaración y no puede cambiar.
+        const z = 15;
+        console.log("Valor de la constante z:", z); // 15
+    </script>
+</body>
+</html>

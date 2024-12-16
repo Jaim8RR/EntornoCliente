@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Operarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Manipulacion array</h1>
+
+    <!-- Form for calculating area -->
+    <form id="areaForm">
+        <h2>Calcular Área</h2>
+        <label for="tipo">Tipo de figura:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="">Seleccione una opción</option>
+            <option value="circulo">Círculo</option>
+            <option value="elipse">Elipse</option>
+            <option value="poligono">Polígono</option>
+        </select>
+        
+        <div id="circuloInputs" class="hidden">
+            <label for="radio">Radio:</label>
+            <input type="number" id="radio" name="radio">
+        </div>
+        
+        <div id="elipseInputs" class="hidden">
+            <label for="radio1">Radio 1:</label>
+            <input type="number" id="radio1" name="radio1">
+            
+            <label for="radio2">Radio 2:</label>
+            <input type="number" id="radio2" name="radio2">
+        </div>
+        
+        <div id="poligonoInputs" class="hidden">
+            <label for="lado">Lado:</label>
+            <input type="number" id="lado" name="lado">
+            <br>
+            <label for="apotema">Apotema:</label>
+            <input type="number" id="apotema" name="apotema">
+            <br>
+            <label for="lados">Número de lados:</label>
+            <input type="number" id="lados" name="lados">
+        </div>
+        
+        <button type="submit">Calcular Área</button>
+    </form>
+    <div id="resultadoArea"></div>
+
+    <!-- Form for checking prime numbers -->
+    <form id="primoForm">
+        <h2>Verificar Números Primos</h2>
+        <label for="numeros">Números (separados por comas):</label>
+        <input type="text" id="numeros" name="numeros" required>
+        
+        <button type="submit">Verificar Primos</button>
+    </form>
+    <div id="resultadoPrimos"></div>
+
+
+    <!-- Form for calculating age -->
+    <form id="edadForm">
+        <h2>Calcular Edad</h2>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        
+        <button type="submit">Calcular Edad</button>
+    </form>
+    <div id="resultadoEdad"></div>
+
+    <!-- Form for verifying name -->
+    <form id="nombreForm">
+        <h2>Verificar Nombre</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="listaNombres">Lista de Nombres (separados por comas):</label>
+        <input type="text" id="listaNombres" name="listaNombres" required>
+        
+        <button type="submit">Verificar Nombre</button>
+    </form>
+    <div id="resultadoNombre"></div>
+
+    <!-- Form for adding data -->
+    <form id="datosForm">
+        <h2>Añadir Datos</h2>
+        <label for="nombreCompleto">Nombre Completo:</label>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        
+        <label for="listaDatos">Lista de Datos (JSON):</label>
+        <textarea id="listaDatos" name="listaDatos" required></textarea>
+        
+        <button type="submit">Añadir Datos</button>
+    </form>
+    <div id="resultadoDatos"></div>
+
+    <script>//full chat gpt lo entiendo pero no lo hubiese sabido hacer. Era esto o que fuera full terminal
+        document.getElementById('tipo').addEventListener('change', function() {
+            const tipo = this.value;
+            document.getElementById('circuloInputs').classList.add('hidden');
+            document.getElementById('elipseInputs').classList.add('hidden');
+            document.getElementById('poligonoInputs').classList.add('hidden');
+            
+            if (tipo === 'circulo') {
+                document.getElementById('circuloInputs').classList.remove('hidden');
+            } else if (tipo === 'elipse') {
+                document.getElementById('elipseInputs').classList.remove('hidden');
+            } else if (tipo === 'poligono') {
+                document.getElementById('poligonoInputs').classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('areaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const tipo = document.getElementById('tipo').value;
+            const radio = parseFloat(document.getElementById('radio').value);
+            const radio1 = parseFloat(document.getElementById('radio1').value);
+            const radio2 = parseFloat(document.getElementById('radio2').value);
+            const lado = parseFloat(document.getElementById('lado').value);
+            const apotema = parseFloat(document.getElementById('apotema').value);
+            const lados = parseFloat(document.getElementById('lados').value);
+            
+            const datos = { tipo, radio, radio1, radio2, lado, apotema, lados };
+            const area = areas(datos);
+            
+            document.getElementById('resultadoArea').textContent = `Área: ${area}`;
+        });
+
+        document.getElementById('primoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const numeros = document.getElementById('numeros').value.split(',').map(Number);
+            const primos = esPrimo(numeros);
+            
+            document.getElementById('resultadoPrimos').textContent = `Números Primos: ${primos.join(', ')}`;
+        });
+
+        
+
+        document.getElementById('edadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            const edadResult = edad(fechaNacimiento);
+            
+            document.getElementById('resultadoEdad').textContent = `Edad: ${edadResult.years} años, ${edadResult.month} meses, ${edadResult.days} días`;
+        });
+
+        document.getElementById('nombreForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const listaNombres = document.getElementById('listaNombres').value.split(',');
+            const resultado = verificarNombre(nombre, listaNombres);
+            
+            document.getElementById('resultadoNombre').textContent = resultado === -1 ? 'Nombre ya existe' : `Lista de Nombres: ${resultado.join(', ')}`;
+        });
+
+        document.getElementById('datosForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nombreCompleto = {
+                nombre: document.getElementById('nombreCompleto').value,
+                apellidos: document.getElementById('apellidos').value
+            };
+            const listaDatos = JSON.parse(document.getElementById('listaDatos').value);
+            const resultado = addDatos(nombreCompleto, listaDatos);
+            
+            document.getElementById('resultadoDatos').textContent = resultado === -1 ? 'Datos ya existen' : `Lista de Datos: ${JSON.stringify(resultado)}`;
+        });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores en JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="js_integration.html">Integración de JavaScript</a>
+        <a href="output_methods.html">Salida de Información</a>
+        <a href="variables.html">Creación de Variables</a>
+        <a href="operators.html">Operadores</a>
+        <a href="ternary_operator.html">Operador Ternario</a>
+        <a href="type_operators.html">Operadores de Tipo</a>
+        <a href="functions.html">Creación de Funciones</a>
+        <a href="missing_arguments.html">Funciones con Faltan Argumentos</a>
+        <a href="anonymous_arrow_functions.html">Funciones Anónimas y Flecha</a>
+        <a href="hoisting.html">Hoisting</a>
+        <a href="variable_scope.html">Ámbito de Variables</a>
+        <a href="conditional_control.html">Control Condicional</a>
+        <a href="loops.html">Bucles</a>
+        <a href="while_loops.html">Bucles While y Do...While</a>
+        <a href="loop_control.html">Control de Salida</a>
+        <a href="falsy_truthy.html">Valores Falsy y Truthy</a>
+    </nav>
+    <h1>Operadores en JavaScript</h1>
+    <h2>Operadores aritméticos, lógicos, de comparación y de asignación</h2>
+    <p>
+        Los operadores son símbolos que permiten realizar operaciones entre variables y valores. En JavaScript, existen diferentes tipos de operadores, como los aritméticos, de comparación, lógicos y de asignación.
+    </p>
+
+    <script>
+        // Operadores aritméticos
+        let suma = 5 + 3;          // 8
+        let resta = 5 - 3;         // 2
+        let multiplicacion = 5 * 3; // 15
+        let division = 5 / 3;      // 1.6667
+        console.log("Suma:", suma);
+        console.log("Resta:", resta);
+        console.log("Multiplicación:", multiplicacion);
+        console.log("División:", division);
+
+        // Operadores de comparación
+        console.log("5 > 3:", 5 > 3);   // true
+        console.log("5 === 3:", 5 === 3); // false
+
+        // Operadores lógicos
+        let and = (5 > 3) && (2 > 1);   // true
+        let or = (5 > 3) || (2 < 1);    // true
+        let not = !(5 > 3);             // false
+        console.log("AND:", and);
+        console.log("OR:", or);
+        console.log("NOT:", not);
+
+        // Operadores de asignación
+        let x = 10;
+        x += 5; // equivalente a x = x + 5
+        console.log("Asignación:", x);  // 15
+    </script>
+</body>
+</html>

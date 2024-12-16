@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT01-01-Jaime_Riesgo</title>
+    <script src="./JaimeTools.js"></script>
+
+    <link rel="stylesheet" href="./UT01-01.css">
+
+
+</head>
+
+<body>
+    <h1>
+        UT01-01-Jaime_Riesgo
+    </h1>
+    <p id="nombreAlumno"></p>
+    <p id="notaAlumno"></p>
+
+    <script>
+        //Programa que pida nombre, nota y según devuelva  un texto
+        //Debe aceptar decimales ya sea con . o , (usar replace) y ser tolerante a fallos, meter texto o cerrar la ventana
+        let alumno = [null, null];
+        
+
+        pedirNombreAlumno(prompt("Introduce nombre del alumno: "));
+        pedirNotaAlumno(prompt("Introduce nota del alumno: "));
+        document.getElementById("nombreAlumno").innerHTML = "Nombre alumno: " + '<span class="nombreAlumno">'+alumno[0]+"</span>";
+        document.getElementById("notaAlumno").innerHTML = "Resultado Notas: " + calcularNota(alumno);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de Tipos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="js_integration.html">Integración de JavaScript</a>
+        <a href="output_methods.html">Salida de Información</a>
+        <a href="variables.html">Creación de Variables</a>
+        <a href="operators.html">Operadores</a>
+        <a href="ternary_operator.html">Operador Ternario</a>
+        <a href="type_operators.html">Operadores de Tipo</a>
+        <a href="functions.html">Creación de Funciones</a>
+        <a href="missing_arguments.html">Funciones con Faltan Argumentos</a>
+        <a href="anonymous_arrow_functions.html">Funciones Anónimas y Flecha</a>
+        <a href="hoisting.html">Hoisting</a>
+        <a href="variable_scope.html">Ámbito de Variables</a>
+        <a href="conditional_control.html">Control Condicional</a>
+        <a href="loops.html">Bucles</a>
+        <a href="while_loops.html">Bucles While y Do...While</a>
+        <a href="loop_control.html">Control de Salida</a>
+        <a href="falsy_truthy.html">Valores Falsy y Truthy</a>
+    </nav>
+    <h1>Operadores de Tipos en JavaScript</h1>
+    <h2>Uso de typeof y instanceof</h2>
+    <p>
+        Los operadores de tipo en JavaScript permiten conocer el tipo de dato de una variable o valor.
+    </p>
+
+    <script>
+        // Operador typeof
+        console.log("Tipo de 42:", typeof 42);             // number
+        console.log("Tipo de 'Hola':", typeof "Hola");     // string
+        console.log("Tipo de true:", typeof true);         // boolean
+        console.log("Tipo de {}:", typeof {});             // object
+        console.log("Tipo de undefined:", typeof undefined); // undefined
+
+        // Operador instanceof
+        let fecha = new Date();
+        console.log("¿Es fecha una instancia de Date?:", fecha instanceof Date); // true
+    </script>
+</body>
+</html>

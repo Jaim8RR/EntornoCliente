@@ -1,0 +1,98 @@
+/* Reset de márgenes y padding para evitar inconsistencias entre navegadores */
+* {
+    margin: 5;
+    padding: 5;
+    box-sizing: border-box;
+}
+
+/* Estilos para el body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos del header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.2em;
+    color: #bbb;
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el main */
+main {
+    padding: 20px;
+    background-color: white;
+    max-width: 1100px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Estilos para los enlaces de la barra de navegación (con hover) */
+nav a:hover {
+    color: #ff5722;
+    text-decoration: underline;
+}
+
+/* Estilos para mejorar la legibilidad de los enlaces */
+nav a:focus {
+    outline: 3px solid #ff5722;
+}
+
+/* Estilos adicionales para los elementos de la página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 1em;
+}

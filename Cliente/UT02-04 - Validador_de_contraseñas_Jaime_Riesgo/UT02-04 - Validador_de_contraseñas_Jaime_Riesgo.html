@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador y Validador de Contraseñas</title>
+    <script src="funciones.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Genera una Contraseña:</h1>
+     <div class="GenerarContraseña">
+    <h2>Prueba el generador de contraseñas seguras y su validador</h2>
+
+
+    <button onclick="displayResults()">Generar Contraseña</button>
+    <p id="generated-password"></p>
+    <p id="validation-result"></p>
+</div>
+    <hr>
+<div class="userPassword">
+    <h2>Valida tu propia contraseña</h2>
+    <form onsubmit="event.preventDefault(); validateUserPassword();">
+        <label for="user-password">Introduce tu contraseña:</label>
+        <input id="user-password" name="user-password" required>
+        <button type="submit">Validar</button>
+    </form>
+    
+    <p id="user-validation-result"></p>
+</div>
+    <hr>
+    <footer>
+        <p>Jaime Riesgo Rossi UT02-04 - Validador de contraseñas</p>
+    </footer>
+
+</body>
+</html>
