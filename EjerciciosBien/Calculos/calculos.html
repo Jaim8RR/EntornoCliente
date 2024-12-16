@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./calcular.js" defer></script>
+    <script src="./calculos.js" defer></script>
+    <style>
+       
+        body {
+            background-color: lightblue;
+            margin: 0px;
+        }
+
+        .header {
+            padding: 0px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .derecha {
+            float: right;
+            width: 45%;
+            padding: 10px;
+
+        }
+
+        .izquierda {
+            float: left;
+            width: 45%;
+            padding: 10px;
+
+        }
+
+        .formulario {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .resultados {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Titulo</div>
+    
+        <div class="formulario izquierda">
+            <form action="">
+                <label for="numero1">Numero 1</label>
+                <input type="number" name="numero1" id="numero1" style="text-align:right;"><br>
+                <label for="numero2">Numero 2</label>
+                <input type="number" name="numero2" id="numero2"" style="text-align:right;"><br>
+                
+                <button type="button" onclick="pasarNums('sumar')">Sumar</button>
+                <button type="button" onclick="pasarNums('restar')">Restar</button>
+                <button type="button" onclick="pasarNums('multiplicar')">multiplicar</button>
+                <button type="button" onclick="pasarNums('dividir')">Dividir</button>
+                <button type="button" onclick="pasarNums('modulo')">Modulo</button>
+            </form>
+        </div>
+        <div class="resultados derecha">Aquí apareceran tus resultados:<br>
+            <div id="resultadoOperacion"></div>
+            </div>
+    
+</body>
+
+</html>
