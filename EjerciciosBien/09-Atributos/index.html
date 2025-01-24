@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="Parrafos" data-orden="Valor1" miatributo="Patata">Primer parrafo</p>
+
+
+    <!--<p>Parrafo.hasAttribute("orden") checkea si tiene ese atributo</p>
+    <p>Parrafo.getAttribute("orden") devuelve el valor del atributo</p>
+    <p>Parrafo.setAttribute("orden", "Valor2") cambia el valor del atributo </p>
+    <p>Parrafo.removeAttribute("miatributo") elimina el atributo</p>!-->
+
+    <input id="Entrada" type="text" value="Patata">
+    <div>
+        <p><a id="Enlace" href="https://www.google.es" target="_blank">Link</a></p>
+        <p><a id="Enlace" href="./otro.html" target="_blank">Link</a></p>
+    </div>
+    <p class="Parrafos" data-orden="Valor2" miatributo="Patata">Primer parrafo</p>
+    <p class="Parrafos" data-orden="Valor3" miatributo="Patata">Primer parrafo</p>
+
+    <script>
+        "use strict";
+        let nodos = document.querySelectorAll("p");
+        for (let i = 0; i < nodos.length; i++) {
+            if (nodos[i].dataset.orden) {
+                console.info(nodos[i].textContent);
+                
+            }
+        }
+        
+    </script>
+
+
+</body>
+
+</html>

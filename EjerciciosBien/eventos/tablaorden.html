@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla Ordenable</title>
+  <style>
+    body{
+        background-color: grey;
+        color: white;
+    }
+    table {
+      width: 50%;
+      
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid orange;
+      cursor: pointer;
+    }
+    th:hover {
+      background-color: orangered;
+    }
+  </style>
+  <script src="tablaorden.js" defer></script>
+</head>
+<body>
+
+<table id="tabla">
+  <thead>
+    <tr>
+      <th onclick="ordenarTabla( 'tabla' ,0)">ID</th>
+      
+      <th onclick="ordenarTabla('tabla',1)">Valor</th>
+      <th onclick="ordenarTabla('tabla',2)">Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>100</td>
+      <td>Pepe</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>200</td>
+      <td>Manolo</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>300</td>
+      <td>Jose</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>400</td>
+      <td>Antonio</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>500</td>
+      <td>Carlos</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+</body>
+</html>
